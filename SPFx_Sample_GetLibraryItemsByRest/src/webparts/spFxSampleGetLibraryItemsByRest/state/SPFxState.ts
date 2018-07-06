@@ -13,10 +13,12 @@ export interface ISPFxProps {
 
 export interface IState {
   title: string;
+  listItems: any[];
 }
 
 export const initialState: IState = {
-  title: ""
+  title: "Documents",
+  listItems: []
 };
 
 //Immutable State.
@@ -24,9 +26,14 @@ export class State extends Immutable.Record(initialState) implements IState {
 
   //Getters
   public readonly title: string;
+  public readonly listItems: any[];
 
   //Setters
   public setTitle(newTitle: string): State {
     return this.set("title", newTitle) as State;
+  }
+
+  public setListItems(items: any[]): State {
+    return this.set("listItems", items) as State;
   }
 }
