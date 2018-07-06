@@ -8,21 +8,30 @@ import {
 } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'SpFxSampleReduxWebPartStrings';
-import SpFxSampleRedux from './components/SpFxSampleRedux';
-import { ISpFxSampleReduxProps } from './components/ISpFxSampleReduxProps';
 
-export interface ISpFxSampleReduxWebPartProps {
-  description: string;
-}
+import Container from './containers/SPFxContainer';
+import { ISPFxProps } from './state/SPFxState';
+import configureStore from './store/SPFxStore';
+import { Provider } from 'react-redux';
 
-export default class SpFxSampleReduxWebPart extends BaseClientSideWebPart<ISpFxSampleReduxWebPartProps> {
+const store = configureStore();
+
+
+export default class SpFxSampleReduxWebPart extends BaseClientSideWebPart<ISPFxProps> {
 
   public render(): void {
-    const element: React.ReactElement<ISpFxSampleReduxProps > = React.createElement(
-      SpFxSampleRedux,
-      {
-        description: this.properties.description
-      }
+    const element: React.ReactElement<ISPFxProps > = React.createElement(
+      typeof Provider, null, React.createElement(
+        Container,
+        {
+          store: store,
+          description: this.properties.description,
+          spHttpClient: this.context.spHttpClient,
+          currentWebUrl: this.context.pageContext.web.serverRelativeUrl,
+          displayName: this.context.pageContext.user.displayName,
+          loginName: this.context.pageContext.user.loginName
+        }
+      )
     );
 
     ReactDom.render(element, this.domElement);
