@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/spFxSampleGetLibraryItemsByRest/SpFxSampleGetLibraryItemsByRestWebPart.js",
+      "manifest": "./src/webparts/spFxSampleGetLibraryItemsByRest/SpFxSampleGetLibraryItemsByRestWebPart.manifest.json",
+      "outputPath": "./dist/sp-fx-sample-get-library-items-by-rest-web-part.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "SpFxSampleGetLibraryItemsByRestWebPartStrings": "webparts/spFxSampleGetLibraryItemsByRest/loc/{locale}.js"
+  }
+}

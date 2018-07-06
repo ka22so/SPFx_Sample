@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "sp-fx-sample-get-library-items-by-rest-client-side-solution",
+    "id": "ff75814d-b284-43ce-9de5-6ef2d5d66760",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/sp-fx-sample-get-library-items-by-rest.sppkg"
+  }
+}
