@@ -8,21 +8,29 @@ import {
 } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'SpFxSampleGetLibraryItemsByRestWebPartStrings';
-import SpFxSampleGetLibraryItemsByRest from './components/SpFxSampleGetLibraryItemsByRest';
-import { ISpFxSampleGetLibraryItemsByRestProps } from './components/ISpFxSampleGetLibraryItemsByRestProps';
 
-export interface ISpFxSampleGetLibraryItemsByRestWebPartProps {
-  description: string;
-}
+import Container from './containers/SPFxContainer';
+import { ISPFxProps } from './state/SPFxState';
+import configureStore from './store/SPFxStore';
+import { Provider } from 'react-redux';
 
-export default class SpFxSampleGetLibraryItemsByRestWebPart extends BaseClientSideWebPart<ISpFxSampleGetLibraryItemsByRestWebPartProps> {
+const store = configureStore();
+
+export default class SpFxSampleGetLibraryItemsByRestWebPart extends BaseClientSideWebPart<ISPFxProps> {
 
   public render(): void {
-    const element: React.ReactElement<ISpFxSampleGetLibraryItemsByRestProps > = React.createElement(
-      SpFxSampleGetLibraryItemsByRest,
-      {
-        description: this.properties.description
-      }
+    const element: React.ReactElement<ISPFxProps > = React.createElement(
+      typeof Provider, null, React.createElement(
+        Container,
+        {
+          store: store,
+          description: this.properties.description,
+          spHttpClient: this.context.spHttpClient,
+          currentWebUrl: this.context.pageContext.web.serverRelativeUrl,
+          displayName: this.context.pageContext.user.displayName,
+          loginName: this.context.pageContext.user.loginName
+        }
+      )
     );
 
     ReactDom.render(element, this.domElement);
