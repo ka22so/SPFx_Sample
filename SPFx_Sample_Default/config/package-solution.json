@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "sp-fx-sample-default-client-side-solution",
+    "id": "13d71a8d-e855-4537-a662-3e98b857b34d",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/sp-fx-sample-default.sppkg"
+  }
+}

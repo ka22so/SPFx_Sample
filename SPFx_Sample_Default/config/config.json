@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/spFxSapmleDefault/SpFxSapmleDefaultWebPart.js",
+      "manifest": "./src/webparts/spFxSapmleDefault/SpFxSapmleDefaultWebPart.manifest.json",
+      "outputPath": "./dist/sp-fx-sapmle-default-web-part.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "SpFxSapmleDefaultWebPartStrings": "webparts/spFxSapmleDefault/loc/{locale}.js"
+  }
+}
