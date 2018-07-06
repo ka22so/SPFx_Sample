@@ -8,7 +8,25 @@ export function getLibraryItems(spHttpClient: SPHttpClient, currentWebUrl: strin
     dispatch(Actions.getLibraryItemsRequest());
 
     try {
-      const response: SPHttpClientResponse = await spHttpClient.get(`${currentWebUrl}/_api/web/lists/GetByTitle('${libraryName}')/items?$select=FileLeafRef,FileRef,FileDirRef,FSObjType,BaseName,DocIcon,Folder/ItemCount&$expand=Folder/ItemCount&$orderby=FileRef`, SPHttpClient.configurations.v1);
+      const select: string[] = [
+        'FileLeafRef',
+        'FileRef',
+        'FileDirRef',
+        'FSObjType',
+        'BaseName',
+        'DocIcon',
+        'Folder/ItemCount'
+      ];
+      const expand: string[] = [
+        'Folder/ItemCount'
+      ];
+      const orderby: string = 'FileRef';
+      const top: number = 100;
+
+      const query = `?$select=${select.join(',')}&$expand=${expand.join(',')}&$orderby=${orderby}&$top=${top}`;
+      const url = `${currentWebUrl}/_api/web/lists/GetByTitle('${libraryName}')/items${query}`;
+
+      const response: SPHttpClientResponse = await spHttpClient.get(url, SPHttpClient.configurations.v1);
       const responseJSON = await response.json();
       const listItems: any[] = responseJSON.value;
       dispatch(Actions.getLibraryItemsSuccess(listItems));
