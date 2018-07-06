@@ -1,0 +1,22 @@
+{
+  "name": "spfx_sample",
+  "version": "1.0.0",
+  "description": "SharePoint Framework Sample Repository",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ka22so/SPFx_Sample.git"
+  },
+  "author": "naoki_katsumi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ka22so/SPFx_Sample/issues"
+  },
+  "homepage": "https://github.com/ka22so/SPFx_Sample#readme",
+  "devDependencies": {
+    "@microsoft/generator-sharepoint": "^1.5.1"
+  }
+}
