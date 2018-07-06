@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "sp-fx-sample-ui-fabric-client-side-solution",
+    "id": "1adf6be2-ac84-4aa0-9624-a3aad3876b45",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/sp-fx-sample-ui-fabric.sppkg"
+  }
+}

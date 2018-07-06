@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/spFxSapmleUiFabric/SpFxSapmleUiFabricWebPart.js",
+      "manifest": "./src/webparts/spFxSapmleUiFabric/SpFxSapmleUiFabricWebPart.manifest.json",
+      "outputPath": "./dist/sp-fx-sapmle-ui-fabric-web-part.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "SpFxSapmleUiFabricWebPartStrings": "webparts/spFxSapmleUiFabric/loc/{locale}.js"
+  }
+}
