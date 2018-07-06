@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "sp-fx-sapmle-redux-client-side-solution",
+    "id": "9829a974-8abf-4b87-af6d-d1165e4847f1",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/sp-fx-sapmle-redux.sppkg"
+  }
+}
